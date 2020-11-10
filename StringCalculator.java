@@ -6,12 +6,13 @@ import java.util.*;
 
 public class StringCalculator 
 {
+	public int count = 0;
 	public int Add(String number)
 	{
 		//Splitting Array using comma separated values
 		String userChar[] = number.split(",");
 		int sum = 0;
-
+			
 		try
 		{
 			if(!userChar[0].startsWith("-"))
@@ -22,6 +23,7 @@ public class StringCalculator
 				}
 				else
 				{
+					count++;
 					//Replacing non-digit number with space
 					String newStr = number.replaceAll("[^\\d]", " ");
 					
@@ -51,6 +53,11 @@ public class StringCalculator
 		return sum;
 	}
 	
+	public int getCountCall()
+	{
+		return count;
+	}
+	
 	public static void main(String[] args) 
 	{
 		Scanner sc = new Scanner(System.in);
@@ -63,5 +70,8 @@ public class StringCalculator
 		StringCalculator scObj = new StringCalculator();
 		int returnSum = scObj.Add(userStr);
 		System.out.println(returnSum);
+		
+		int returnCount = scObj.getCountCall();
+		System.out.println(returnCount + " times invoked Add Method");
 	}
 }

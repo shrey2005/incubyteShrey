@@ -72,6 +72,6 @@ public class StringCalculator
 		System.out.println(returnSum);
 		
 		int returnCount = scObj.getCountCall();
-		System.out.println(returnCount + " times invoked Add Method");
+		System.out.println(returnCount + " times invoked add method");
 	}
 }
